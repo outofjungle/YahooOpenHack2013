@@ -1,8 +1,7 @@
 const int SPEAKER = 7;
 
-const int LED_COUNT = 7;
-int LED[ LED_COUNT ] = { A3, A4, A2, 6, 5, 9, 10 };
-
+const int LED_COUNT = 8;
+int LED[ LED_COUNT ] = { A3, A4, A2, 6, 5, 9, 10, 11 };
 
 const int A = 880;
 const int B = 494;
@@ -25,7 +24,7 @@ int SONG[ SIZE ] = {
 
 void setup() {
   pinMode( SPEAKER, OUTPUT );
-  for( int i=0; i<= LED_COUNT; i++ ){
+  for( int i=0; i< LED_COUNT; i++ ){
     pinMode( LED[i], OUTPUT );
   }
   randomSeed(analogRead(0));
@@ -33,7 +32,7 @@ void setup() {
 
 void twinkle() {
   int twinkle = random( LED_COUNT );
-  for( int i=0; i<= LED_COUNT; i++ ){
+  for( int i=0; i< LED_COUNT; i++ ){
     digitalWrite( LED[i], random(2) );
   }
 }
